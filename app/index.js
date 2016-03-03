@@ -11,9 +11,35 @@ var ProfileContainer = React.createClass({
   render: function() {
     return (
       <div>
-        <img src={this.props.user.image} style={{width:100, height:100}} />
-        <a href={"https://www.github.com/" + this.props.user.username}>{this.props.user.username}</a>
-        <p>{this.props.user.nameUser}</p>
+        <ProfileImg userImg={this.props.user.image} />
+        <ProfileLink username={this.props.user.username} />
+        <ProfileName nameUser={this.props.user.nameUser} />
+      </div>
+    )
+  }
+});
+
+var ProfileImg = React.createClass({
+  render: function() {
+    return <img src={this.props.userImg} style={{width:100, height:100}} />
+  }
+});
+
+var ProfileLink = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <a href={"https://www.github.com/" + this.props.username}>{this.props.username}</a>
+      </div>
+    )
+  }
+});
+
+var ProfileName = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <p>{this.props.nameUser}</p>
       </div>
     )
   }
