@@ -14,4 +14,6 @@ var routes = (
       <IndexRouter component={Home} />
     </Route>
   </Router>
-)
+);
+
+module.exports = routes;
